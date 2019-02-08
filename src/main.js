@@ -1,7 +1,11 @@
 import Vue from 'vue';
+import Buefy from 'buefy';
 import App from './App.vue';
 import router from './router';
+import 'buefy/dist/buefy.css';
 import './registerServiceWorker';
+
+Vue.use(Buefy);
 
 Vue.config.productionTip = false;
 
