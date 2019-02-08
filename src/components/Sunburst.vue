@@ -1,26 +1,22 @@
-<template>
-  <div class="sunburst">
-  <sunburst :data="tree">
+<template slot-scope="{ nodes, actions }">
+  <sunburst :data="data">
 
-  <!-- Add behaviors -->
-  <template slot-scope="{ nodes, actions }">
+    <template slot-scope="{ nodes, actions }">
     <highlightOnHover :nodes="nodes" :actions="actions" />
     <zoomOnClick :nodes="nodes" :actions="actions" />
   </template>
 
   <!-- Add information to be displayed on top the graph -->
-  <nodeInfoDisplayer slot="top" slot-scope="{ nodes }" :current="nodes.zoomed" :root="nodes.root" description="of visits begin with this sequence of pages" />
+  <nodeInfoDisplayer slot="top" slot-scope="{ nodes }" :current="nodes.mouseOver" :root="nodes.root" description="of visits begin with this sequence of pages" />
 
   <!-- Add bottom legend -->
   <breadcrumbTrail slot="legend" slot-scope="{ nodes, colorGetter, width }" :current="nodes.mouseOver" :root="nodes.root" :colorGetter="colorGetter" :from="nodes.clicked" :width="width" />
 
-</sunburst>
-  </div>
-</template>
+  </sunburst>
+  </template>
 
 <script>
-
-  import {
+import {
   breadcrumbTrail,
   highlightOnHover,
   nodeInfoDisplayer,
@@ -30,10 +26,7 @@
 import "vue-d3-sunburst/dist/vue-d3-sunburst.css";
 
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  },
+  name: 'sunburstt',
   components: {
     breadcrumbTrail,
     highlightOnHover,
@@ -83,10 +76,3 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.sunburst {
-  height: 60vh;
-  width: 60vw;
-}
-</style>
