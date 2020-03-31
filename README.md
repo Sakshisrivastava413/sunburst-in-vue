@@ -1,4 +1,7 @@
-# ipl
+## Screenshot:
+
+![Screenshot for sunburst viz](https://user-images.githubusercontent.com/32509093/78006574-d110a000-735a-11ea-95c8-97ec346cfd81.png)
+
 
 ## Project setup
 ```
